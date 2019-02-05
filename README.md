@@ -1,1 +1,1 @@
-# MirzaAbdullah.github.io
+# ScanToIngredients - An Augmented Reality Applicaion
