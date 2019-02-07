@@ -40,7 +40,7 @@
             <!-- <a-entity scale="0.01 0.01 0.01" material='color: red; transparent: true; opacity: 0.8' obj-model="obj: url(https://raw.githubusercontent.com/MirzaAbdullah/Scan-To-Ingredients---An-Augmented-Reality-App/master/3DModels/KitKat/KitKat.obj);
                            mtl: url(https://raw.githubusercontent.com/MirzaAbdullah/Scan-To-Ingredients---An-Augmented-Reality-App/master/3DModels/KitKat/KitKat.mtl);">
             </a-entity> -->
-            <a-image width="5" height="5" src="https://raw.githubusercontent.com/MirzaAbdullah/Scan-To-Ingredients---An-Augmented-Reality-App/master/img/Kitkat_P.png">s</a-image>
+            <a-image rotation="90 90 90" width="5" height="5" src="https://raw.githubusercontent.com/MirzaAbdullah/Scan-To-Ingredients---An-Augmented-Reality-App/master/img/Kitkat_P.png">s</a-image>
         </a-marker>
 
         <a-marker type='pattern' url='https://raw.githubusercontent.com/MirzaAbdullah/Scan-To-Ingredients---An-Augmented-Reality-App/master/Patterns/CocaColaPattern.patt'>
@@ -55,48 +55,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Hammer JavaScript for Extra Mobile Screen Features -->
-    <script src="Scripts/hammer.js"></script>
-
-    <script type="text/JavaScript">
-
-            (function () {
-
-                var el = document.querySelector(".pinch");
-                var ham = new Hammer(el, {
-                    domEvents: true
-                });
-                var width = 1900;
-                var height = 400;
-                var left = 950;
-                var top = 220;
-
-                ham.get('pinch').set({ enable: true });
-
-                ham.on("pinch", function (e) {
-                    console.log("pinch");
-                    if (width * e.scale >= 300) {
-                        var img = el.childNodes[1];
-                        img.style.width = (width * e.scale) + 'px';
-                        img.style.marginLeft = (-left * e.scale) + 'px';
-                        img.style.height = (height * e.scale) + 'px';
-                        img.style.marginTop = (-top * e.scale) + 'px';
-                    }
-                    console.log(e.scale);
-                });
-
-                ham.on("pinchend", function (e) {
-                    width = width * e.scale;
-                    height = height * e.scale;
-                    left = left * e.scale;
-                    top = top * e.scale;
-                    console.log(width);
-                });
-
-            })();
-
-    </script>
 </body>
 
 </html>
